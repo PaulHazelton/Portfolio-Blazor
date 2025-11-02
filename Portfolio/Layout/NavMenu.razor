@@ -1,12 +1,16 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Portfolio</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
+﻿<header>
+	<NavLink id="logo-link" Match="NavLinkMatch.All">
+		@* <img class="logo" src="images/logo.svg" alt="logo" /> *@
+		<i class="logo fa-solid fa-house"></i>
+	</NavLink>
+	<nav>
+		<ul id="nav-link-list">
+			<NavLink href="/about" id="nav-list-item">About Me</NavLink>
+			<NavLink href="/dev-logs" id="nav-list-item">Dev Logs</NavLink>
+		</ul>
+	</nav>
+</header>
+@*
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="nav flex-column">
         <div class="nav-item px-3">
@@ -25,15 +29,4 @@
             </NavLink>
         </div>
     </nav>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+</div> *@
