@@ -36,21 +36,21 @@
 /* Media queries to set rem */
 @media (min-width: 800px) {
 	:root {
-		font-size: 20px;
+		font-size: 16px;
 		--header-fs: 1rem;
 	}
 }
 
 @media (max-width: 800px) {
 	:root {
-		font-size: 16px;
+		font-size: 12px;
 		--header-fs: 0.8rem;
 	}
 }
 
 @media (max-width: 600px) {
 	:root {
-		font-size: 16px;
+		font-size: 12px;
 	}
 }
 
@@ -178,19 +178,18 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	border: none;
 }
 
 .logo {
-	height: 100%;
+	font-size: 1.4em;
+	/* transition: font-size var(--time-1) ease-in-out; */
 }
 
-#logo-link:hover,
+/* #logo-link:hover,
 #logo-link:focus {
-	border-radius: 50%;
-	border: 2px solid var(--accent);
-}
+	font-size: 1.6em;
+	transition: font-size var(--time-1) ease-in-out;
+} */
 
 /* Nav items */
 #nav-link-list {
