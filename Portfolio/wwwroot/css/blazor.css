@@ -60,5 +60,13 @@
 }
 
 .loading-progress-text:after {
-	content: var(--blazor-load-percentage-text, "Loading");
+	content: var(--blazor-load-percentage-text, "One moment please");
 }
+
+/* #region Weird Blazor h1 focus thing */
+
+h1:focus {
+	outline: none;
+}
+
+/* #endregion */

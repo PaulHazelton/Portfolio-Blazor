@@ -3,24 +3,16 @@
 	margin: 0;
 	padding: 0;
 
-	-webkit-box-sizing: border-box;
-	/* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;
-	/* Firefox, other Gecko */
 	box-sizing: border-box;
-	/* Opera/IE 8+ */
 }
 
 /* Variables */
 :root {
-	/* resume-main colors */
+	/* Colors */
 	--backgroundColor: #000;
 	--foregroundColor: #fff;
 	--accent: #0ff;
 
-	--accent-transparent: rgba(0, 255, 255, 0);
-
-	/* Standard colors for this site */
 	--black: #000;
 	--white: #fff;
 	--offWhite: #ddd;
@@ -55,257 +47,36 @@
 	}
 }
 
-/* Setting colors */
+html {
+	height: 100%;
+}
+
 body {
 	color: var(--foregroundColor);
 	background-color: var(--backgroundColor);
+
+	height: 100%;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+
+	font-family: "Segoe UI", sans-serif;
 }
 
 #app {
-	height: 100vh;
+	height: 100%;
+	min-height: 100vh;
 }
 
 main {
-	height: calc(100vh - (var(--header-fs) * 4));
+	padding-top: calc(var(--header-fs) * 4);
+	height: 100%;
+	min-height: 100vh;
+	
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
 /* #endregion Foundation */
-
-/* #region Nav bar */
-
-header {
-	font-size: calc(var(--header-fs));
-
-	position: sticky;
-
-	width: 100%;
-	
-	height: 4em;
-
-	background-color: var(--gray1);
-	transition: var(--time-2) ease-in-out;
-	z-index: 10;
-}
-
-/* Logo */
-#logo-link {
-	font-size: 1.5em;
-	height: 2em;
-	width: 2em;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	text-decoration: none;
-	color: var(--foregroundColor);
-
-	cursor: pointer;
-}
-
-/* Nav items */
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	width: 100%;
-	height: 100%;
-
-	padding: 0 1em;
-}
-#nav-list {
-	list-style: none;
-	display: flex;
-}
-
-#nav-list:after {
-	content: '';
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	pointer-events: none;
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--gray1) 100%);
-	width: 2em;
-	height: 100%;
-}
-
-#nav-list a {
-	font-size: 1.5em;
-
-	position: relative;
-	margin: 0 1.3em;
-	white-space: nowrap;
-	text-decoration: none;
-
-	color: var(--foregroundColor);
-
-	transition: transform var(--time-2) ease-in;
-
-	cursor: pointer;
-}
-
-#nav-list a:hover {
-	color: var(--accent);
-}
-
-#nav-list a::after {
-	content: '';
-	position: absolute;
-
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-
-	transform: scaleX(0);
-	transition: transform var(--time-1) ease-in;
-
-	background: var(--accent);
-}
-
-#nav-list a:hover::after,
-#nav-list a:focus::after {
-	transform: scaleX(1);
-	transition: transform var(--time-1) ease-in;
-}
-
-/* #endregion Nav bar */
-
-/* #region External Link */
-
-.ext-link {
-	position: relative;
-	color: var(--accent);
-	text-decoration: none;
-	white-space: nowrap;
-	cursor: pointer;
-}
-
-.ext-link::after {
-	content: '';
-	position: absolute;
-
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 1px;
-
-	transform: scaleX(0);
-	transition: transform var(--time-1) ease-in;
-
-	background: var(--accent);
-}
-
-.ext-link:hover::after,
-.ext-link:focus::after {
-	transform: scaleX(1);
-	outline: 0;
-}
-
-/* #endregion */
-
-/* #region Home Page */
-
-.home-container {
-	max-width: 100ch;
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 4rem;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.home-left-text {
-	width: 60%;
-}
-
-.home-right-image {
-	width: 35%;
-}
-
-.home-right-image img {
-	width: 100%;
-}
-
-.home-container h1 {
-	font-size: 4rem;
-}
-
-.home-container h2 {
-	margin-bottom: 1rem;
-}
-
-.home-container img {
-	border-radius: 2rem;
-}
-
-/* #endregion Home Page */
-
-/* #region Footer */
-
-footer {
-	width: 100%;
-	text-align: center;
-	margin-top: 1rem;
-	padding: 1rem;
-}
-
-.connection-list {
-	padding-top: 1rem;
-	display: flex;
-	justify-content: center;
-	gap: 2rem;
-}
-
-.connection {
-	position: relative;
-	width: 4rem;
-	color: white;
-}
-
-.connection i {
-	font-size: 4rem;
-	color: white;
-}
-
-.connection-link:hover .connection-pic {
-	transform: rotateZ(360deg);
-	transition: transform var(--time-3) ease;
-}
-
-.connection-link:focus .connection-pic {
-	border: 2px solid var(--accent);
-	outline-style: none;
-	outline-width: 0px;
-	outline: none;
-	transition: 0;
-}
-
-.connection-label {
-	font-size: 1rem;
-	font-weight: normal;
-	text-align: center;
-
-	position: relative;
-	width: 120%;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-/* #endregion */
 
 /* #region Construction */
 
@@ -328,14 +99,6 @@ footer {
 .center-pane img {
 	margin-top: 2rem;
 	width: 40%;
-}
-
-/* #endregion */
-
-/* #region Weird Blazor h1 focus thing */
-
-h1:focus {
-	outline: none;
 }
 
 /* #endregion */

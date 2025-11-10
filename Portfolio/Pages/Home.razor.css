@@ -1,0 +1,59 @@
+.home-container {
+	max-width: 100ch;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+/* Large */
+@media (min-width: 800px) {
+	.home-container {
+		margin-top: 2rem;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	.text {
+		width: 60%;
+	}
+}
+
+/* Medium + Small */
+@media (max-width: 800px) {
+	.image {
+		padding-top: 2rem;
+		align-self: center;
+	}
+}
+
+
+.home-container h1 {
+	font-size: 4rem;
+	font-family: "Comfortaa", sans-serif;
+}
+
+.home-container h2 {
+	font-family: "Comfortaa", sans-serif;
+	margin-bottom: 1rem;
+}
+
+.home-container p {
+	font-family: "Segoe UI", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.home-container img {
+	border-radius: 50%;
+}
+
+.image {
+	width: 35%;
+}
+
+.image img {
+	width: 100%;
+}
