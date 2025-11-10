@@ -1,0 +1,42 @@
+.home-container {
+	max-width: 100ch;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 4rem;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.home-left-text {
+	width: 60%;
+}
+
+.home-right-image {
+	width: 35%;
+}
+
+.home-right-image img {
+	width: 100%;
+}
+
+.home-container h1 {
+	font-size: 4rem;
+	font-family: "Comfortaa", sans-serif;
+}
+
+.home-container h2 {
+	font-family: "Comfortaa", sans-serif;
+	margin-bottom: 1rem;
+}
+
+.home-container p {
+	font-family: "Segoe UI", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.home-container img {
+	border-radius: 2rem;
+}
