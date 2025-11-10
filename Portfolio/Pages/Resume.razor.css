@@ -1,5 +1,12 @@
 /* #region Foundation */
 
+#resume-container {
+	width: 100%;
+	height: 100%;
+	padding: 0 4rem;
+	overflow-x: scroll;
+}
+
 .page {
 	--page-width: 8.5in;
 	--page-height: 11in;
@@ -28,8 +35,8 @@
 	font-size: 8pt;
 
 	width: var(--page-width);
-	/* height: var(--page-height); */
-	margin: 5em auto;
+	height: var(--page-height);
+	margin: 5rem auto;
 	padding: var(--page-padding);
 
 	color: black;
@@ -38,8 +45,6 @@
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 	line-height: 1.3;
-
-	/* outline: 0.5px solid var(--muted-1); */
 }
 
 .page-break {
