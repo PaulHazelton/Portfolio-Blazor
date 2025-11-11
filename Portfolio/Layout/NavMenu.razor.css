@@ -41,6 +41,16 @@ nav {
 	cursor: pointer;
 }
 
+::deep #home-button::after {
+	font-family: "bootstrap-icons";
+	content: "\f425";
+	font-size: 2rem;
+}
+
+::deep #home-button.active::after {
+	content: "\f424";
+}
+
 ::deep #home-button:hover,
 ::deep #home-button.active {
 	color: var(--accent);
@@ -101,8 +111,7 @@ nav {
 }
 
 /* Underline shown */
-::deep #nav-list a:hover::after,
-::deep #nav-list a.active::after {
+::deep #nav-list a:hover::after {
 	transform: scaleX(1);
 	transition: transform var(--time-1) ease-in;
 }
