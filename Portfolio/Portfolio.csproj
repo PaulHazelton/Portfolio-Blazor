@@ -21,5 +21,4 @@
     <Watch HotReloadEnabled="false" Include="wwwroot\**\*" />
   </ItemGroup>
 
-
 </Project>
