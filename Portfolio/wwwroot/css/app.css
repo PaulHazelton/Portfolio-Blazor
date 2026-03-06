@@ -193,34 +193,6 @@ main {
 
 /* #endregion */
 
-/* #region Dangerous Generic Old Stuff */
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-p {
-	margin-bottom: 1rem;
-}
-
-table {
-	border-collapse: "collapse";
-	width: 100%;
-	border: 1px solid var(--gray2);
-}
-
-th,
-td {
-	padding: 0.5rem;
-	border: 1px solid var(--gray2);
-}
-
-ol {
-	margin-left: 2rem;
-}
-
-/* #endregion */
-
 /* #region Nice button */
 
 .btn {
@@ -249,36 +221,7 @@ ol {
 
 /* #endregion */
 
-.button-box {
-	display: flex;
-	justify-content: center;
-}
-
-.neat-button {
-	font-size: 1rem;
-	font-weight: bold;
-	text-decoration: none;
-
-	cursor: pointer;
-
-	position: relative;
-	/* width: 100%; */
-	padding: 0.5em;
-
-	color: var(--accent);
-	border: 2px solid var(--accent);
-	border-radius: 0.5em;
-	background-color: var(--backgroundColor);
-	transition: var(--time-2);
-	transition: var(--time-2);
-}
-
-.neat-button:hover,
-.neat-button:focus {
-	color: var(--backgroundColor);
-	background-color: var(--accent);
-	transition: var(--time-2);
-}
+/* #region Project Pages */
 
 .img-box {
 	width: 100%;
@@ -286,61 +229,6 @@ ol {
 	justify-content: center;
 }
 
-.big-img {
-	width: 40%;
-}
-
-#overflow-x-space:after {
-	content: '';
-	display: block;
-	position: relative;
-	right: 0;
-	width: 0;
-	height: 1px;
-	margin-right: 1px;
-}
-
-
-/* Center Pane. There's two for proper sizing, its a pain */
-#center-pane1 {
-	position: relative;
-	display: flex;
-	justify-content: center;
-
-	padding-left: 2rem;
-	padding-right: 2rem;
-
-	width: 100%;
-	height: 100vh;
-}
-
-@media (min-width: 800px) {
-	#center-pane1 {
-		padding-top: calc(4*1rem*1 - 1rem);
-	}
-}
-
-@media (max-width: 800px) {
-	#center-pane1 {
-		padding-top: calc(4*1rem*0.8 - 1rem);
-	}
-}
-
-#contact-box {
-	font-size: 1.5rem;
-}
-
-.yellow-info {
-	background-color: #272115;
-	/*rgba(210, 153, 34, 0.4); /* rgba(187, 128, 9, 0.15);*/
-	border: #5a4210 1px solid;
-	border-radius: 6px;
-
-	padding: 1rem;
-	margin: 1rem;
-}
-
-/* SORT ME */
 .basic-container {
 	max-width: 100ch;
 	width: 100%;
@@ -358,3 +246,5 @@ ol {
 	width: 100%;
 	aspect-ratio: 16 / 9;
 }
+
+/* #endregion */

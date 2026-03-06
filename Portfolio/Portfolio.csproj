@@ -17,4 +17,9 @@
     <PackageReference Include="PublishSPAforGitHubPages.Build" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Watch HotReloadEnabled="false" Include="wwwroot\**\*" />
+  </ItemGroup>
+
+
 </Project>
