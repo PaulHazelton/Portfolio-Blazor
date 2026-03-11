@@ -1,0 +1,5 @@
+{
+	"Title": "State Record Pattern In Blazor",
+	"PostedOn": "2025-12-01",
+	"Introduction": "This is like the evolution of the Is-Loading pattern, but much better. Instead of a binary state (`IsLoading` is true or false), we can have multiple states. No null warnings, no question marks or exclamation points are required."
+}

@@ -1,0 +1,5 @@
+{
+	"Title": "Nullable Reference Types With EF Core",
+	"PostedOn": "2026-03-10",
+	"Introduction": "EF Core entities were another big source of warnings when we enabled the nullable feature in C#. Navigation properties may be required database-wise but may be null if they were not included when queried. Initialization was often most convenient with a parameterless constructor, but this now caused many warnings. After scouring Microsoft docs, reading other blogs online, and spending over 4 years waging war against null reference exceptions in C#, here's my thoughts on the best ways to use EF Core with NRT enabled."
+}

@@ -1,0 +1,5 @@
+{
+	"Title": "Is Loading Pattern in Blazor",
+	"PostedOn": "2025-10-01",
+	"Introduction": "It's a common pattern to have an `IsLoading` bool property in the code-behind file for a Blazor component, and then check if this is false before using certain data. While this can get the job done, and appears in many Microsoft tutorials, I think it is lacking in many ways. Nonetheless, I have some suggestions on how to improve the use of this pattern while also reducing nullable warnings."
+}

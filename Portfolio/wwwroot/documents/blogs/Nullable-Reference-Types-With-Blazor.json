@@ -1,0 +1,5 @@
+{
+	"Title": "Nullable Reference Types With Blazor",
+	"PostedOn": "2025-11-01",
+	"Introduction": "My team first started using nullable reference types with Blazor, we were immediately met with hundreds of warnings. In my opinion, the main issue stems from the component lifecycle methods like `OnInitializedAsync` and `OnParametersSetAsync` being used over constructors"
+}
