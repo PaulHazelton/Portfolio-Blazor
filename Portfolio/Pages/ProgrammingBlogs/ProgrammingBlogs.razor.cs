@@ -3,7 +3,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Pages.ProgrammingBlogs;
 
-public partial class ProgrammingBlogs : ComponentBase
+public partial class ProgrammingBlogs
 {
 	[Inject]
 	public required HttpClient HttpClient { get; init; }
@@ -14,13 +14,6 @@ public partial class ProgrammingBlogs : ComponentBase
 
 	protected override async Task OnInitializedAsync()
 	{
-		// TODO TEST CODE REMOVE
-		await Task.Delay(1000);
-
 		BlogPreviews = await HttpClient.GetFromJsonAsync<BlogMetaData[]>(_blogIndexPath);
-
-		// BlogPreviews = [
-
-		// ];
 	}
 }

@@ -1,20 +1,23 @@
 ﻿@* <a class="TODO" href="@Routes.Blogs/1">Continue Reading</a> *@
 
-<article>
+<a href="@Routes.LinkToBlog(BlogPreview.FileName)">
+	<article>
 
-	<header>
-		<h2>@BlogPreview.Title</h2>
-	</header>
-	
-	<section>
-		<p>
-			@BlogPreview.Introduction
-		</p>
-	</section>
-	
-	@* Bottom left *@
-	<span>@BlogPreview.PostedOn</span>
+		<header>
+			<h2>@BlogPreview.Title</h2>
+		</header>
+		
+		<section>
+			<p>
+				@BlogPreview.Introduction
+			</p>
+		</section>
+		
+		@* Bottom left *@
+		<span>@BlogPreview.PostedOn</span>
 
-	@* Bottom right, arrow appears when hovered *@
-	@* TODO *@
-</article>
+		@* Bottom right, arrow appears when hovered *@
+		@* TODO *@
+		
+	</article>
+</a>

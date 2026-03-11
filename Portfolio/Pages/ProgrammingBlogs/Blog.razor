@@ -1,0 +1,12 @@
+@attribute [Route(Routes.Blog)]
+
+@if (_markdown is null)
+{
+	<h3>LOADING</h3>
+}
+else
+{
+	<code>
+		@_markdown
+	</code>
+}
