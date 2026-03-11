@@ -5,5 +5,5 @@ namespace Portfolio.Pages.ProgrammingBlogs;
 public partial class BlogPreviewItem : ComponentBase
 {
 	[Parameter, EditorRequired]
-	public required BlogPreview BlogPreview { get; set; }
+	public required BlogMetaData BlogPreview { get; set; }
 }

@@ -11,3 +11,15 @@
 	</ExternalLink>
 	feature. It was not a smooth transition for me or my team to start using it with Blazor and EF Core however, so I was inspired to start writing down some code style guidelines for it's use. And now it has transitioned to this blog here.
 </p>
+
+@if (BlogPreviews is null)
+{
+	<h1>LOADING</h1>
+}
+else
+{
+	@foreach (var blogData in BlogPreviews)
+	{
+		<BlogPreviewItem BlogPreview=blogData />
+	}
+}
