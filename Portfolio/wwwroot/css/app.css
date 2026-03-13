@@ -99,13 +99,17 @@ p {
 	margin-bottom: 1.5rem;
 }
 
+a {
+	color: var(--accent);
+}
+
 /* #endregion Foundation */
 
 /* #region Blogs */
 
 .reading-pane {
 	width: 100%;
-	max-width: 100ch;
+	max-width: 120ch;
 	margin: 0 auto;
 	/* margin-left: auto;
 	margin-right: auto;
@@ -147,11 +151,183 @@ p {
 	background-color: color-mix(in oklab, var(--accent), black 80%);
 }
 
+/* #endregion */
 
-/* article {
-	max-width: 120ch;
-	margin: 0 auto;
-} */
+/* #region Exported Blog HTML */
+
+
+
+.blog-article table {
+	margin: 1em 0;
+	width: 100%;
+	overflow-x: auto;
+	
+	border-collapse: collapse;
+}
+
+.blog-article table, .blog-article th, .blog-article td {
+	border: 1px solid var(--gray3);
+}
+
+
+.blog-article table caption {
+	margin-bottom: 0.75em;
+}
+
+.blog-article tbody {
+	margin-top: 0.5em;
+}
+
+.blog-article th {
+	padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+.blog-article td {
+	padding: 0.125em 0.5em 0.25em 0.5em;
+}
+
+
+
+
+
+div.sourceCode {
+	background-color: var(--gray0);
+	padding: 1rem;
+	overflow-x: scroll;
+}
+
+code span.al {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+code span.an {
+	color: #60a0b0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+code span.at {
+	color: #7d9029;
+}
+
+code span.bn {
+	color: #40a070;
+}
+
+code span.bu {
+	color: #008000;
+}
+
+code span.cf {
+	color: #007020;
+	font-weight: bold;
+}
+
+code span.ch {
+	color: #4070a0;
+}
+
+code span.cn {
+	color: #880000;
+}
+
+/* Comment */
+code span.co {
+	color: #808080;
+	font-style: italic;
+}
+
+code span.cv {
+	color: #60a0b0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+code span.do {
+	color: #ba2121;
+	font-style: italic;
+}
+
+/* Data Type */
+code span.dt {
+	color: #FA236E;
+}
+
+code span.dv {
+	color: #40a070;
+}
+
+code span.er {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+/* code span.ex {} */
+
+code span.fl {
+	color: #40a070;
+}
+
+/* Function */
+code span.fu {
+	color: #3BE5FF;
+}
+
+code span.im {
+	color: #008000;
+	font-weight: bold;
+}
+
+code span.in {
+	color: #60a0b0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Keyword */
+code span.kw {
+	color: #FA236E;
+	font-weight: bold;
+}
+
+code span.op {
+	color: #cccccc;
+}
+
+code span.ot {
+	color: #007020;
+}
+
+code span.pp {
+	color: #bc7a00;
+}
+
+code span.sc {
+	color: #4070a0;
+}
+
+code span.ss {
+	color: #bb6688;
+}
+
+code span.st {
+	color: #43A543;
+}
+
+code span.va {
+	color: #19177c;
+}
+
+code span.vs {
+	color: #4070a0;
+}
+
+code span.wa {
+	color: #60a0b0;
+	font-weight: bold;
+	font-style: italic;
+}
 
 /* #endregion */
 
