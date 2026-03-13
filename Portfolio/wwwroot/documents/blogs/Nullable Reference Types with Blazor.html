@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Nullable Reference Types with Blazor</title>
-  <style>
+<!-- <style>
 
 html {
 color: #1a1a1a;
@@ -230,12 +223,8 @@ code span.st { color: #4070a0; }
 code span.va { color: #19177c; } 
 code span.vs { color: #4070a0; } 
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
-</style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Nullable Reference Types with Blazor</h1>
-</header>
+</style> -->
+
 <h1 id="nullable-reference-types-with-blazor">Nullable Reference Types
 With Blazor</h1>
 <p>My team first started using nullable reference types with Blazor, we
@@ -269,9 +258,9 @@ public. However, I like to use <code>init</code> for the setter, to make
 it clear that only the DI container should be setting the property.</p>
 <p>So here’s how I usually do dependency injection in my Blazor
 components:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Inject<span class="op">]</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Inject<span class="op">]</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> required IJRuntime JSRuntime <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> init<span class="op">;</span> <span class="op">}</span></span></code></pre></div>
-<h2 id="parameters">,Parameters</h2>
+<h2 id="parameters">Parameters</h2>
 <h3 id="required-parameters">Required Parameters</h3>
 <p>If the parameter is required, decorate it with the
 <code>[EditorRequired]</code> attribute so that the consumer of the
@@ -279,7 +268,7 @@ component will get a warning at compile time if they don’t provide the
 parameter.</p>
 <p>Mark it as <code>required</code> to let the compiler know that it
 won’t be null. Or use a question mark to mark it as nullable.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">,</span> EditorRequired<span class="op">]</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">,</span> EditorRequired<span class="op">]</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> required <span class="dt">string</span> RequiredParam <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">]</span> <span class="op">[</span>EditorRequired<span class="op">]</span></span>
@@ -300,7 +289,7 @@ null in the first place. You can check it using
 <code>HasDelegate</code>, but it will not throw an
 error if<code>HasDelegate</code>is false, and you call
 <code>InvokeAsync()</code> on it.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">]</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">]</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> EventCallback OptionalCallback <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> async Task <span class="fu">SomeFunction</span><span class="op">()</span></span>
@@ -317,7 +306,7 @@ optional, and to not do so when it is required. This has the drawback of
 allowing for “two zeros” as I would call it: a null value, and a default
 value that is not null but <code>HasDelegate</code> is false. I think
 the pros outweigh the cons though, so I prefer this style.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">]</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> EventCallback<span class="op">?</span> OptionalCallback <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Parameter<span class="op">,</span> EditorRequired<span class="op">]</span></span>
@@ -332,5 +321,3 @@ the pros outweigh the cons though, so I prefer this style.</p>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// No need to check the required one</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    await RequiredCallback<span class="op">.</span><span class="fu">InvokeAsync</span><span class="op">();</span></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</body>
-</html>

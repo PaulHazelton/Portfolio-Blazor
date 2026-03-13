@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Nullable Reference Types With EF Core</title>
-  <style>
+<!-- <style>
 
 html {
 color: #1a1a1a;
@@ -230,12 +223,8 @@ code span.st { color: #4070a0; }
 code span.va { color: #19177c; } 
 code span.vs { color: #4070a0; } 
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
-</style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Nullable Reference Types With EF Core</h1>
-</header>
+</style> -->
+
 <h1 id="nullable-reference-types-with-ef-core">Nullable Reference Types
 With EF Core</h1>
 <p>EF Core entities were another big source of warnings when we enabled
@@ -265,7 +254,7 @@ matching names) intended only for use by EF when loading the object from
 the database, and one or more public constructors for use by the program
 when actually creating new entities. While this method is a bit verbose,
 it is my preference.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -351,7 +340,7 @@ middle ground.</td>
 but at the cost of ugly <code>#pragma</code>code. It’s my second
 favorite method, and I think it is the most palatable option for most
 people on the team.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -418,7 +407,7 @@ want to only use the object-initializer syntax. I dislike this method
 because it opens us up to a <a href="https://github.com/dotnet/csharplang/discussions/6405">pit of
 failure</a> (lmao) which kind of defeats the purpose of the null
 reference analyzer.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -504,13 +493,13 @@ way, you are forced to write more boilerplate, but you’re less likely to
 forget to write the correct include statements. As an added bonus,
 prepending your functions with null-coalesce-and-throws can serve as
 added documentation.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid BlogId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid BlogId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Blog<span class="op">?</span> Blog <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <p>Alternatively, Microsoft proposes a “stricter approach” that can
 combine the previously mentioned boilerplate onto the entity itself. Now
 the null-coalesce-and-throws can be put in one place, and navigation
 properties that are required don’t have to be marked as nullable.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Address<span class="op">?</span> _shippingAddress<span class="op">;</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Address<span class="op">?</span> _shippingAddress<span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Address ShippingAddress</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    set <span class="op">=&gt;</span> _shippingAddress <span class="op">=</span> value<span class="op">;</span></span>
@@ -523,7 +512,7 @@ if they have one, this time <strong>nullable</strong>. The navigation
 object is also nullable since it is optional. The downside here is you
 have to careful, a null value could mean you forgot to include the
 property or the property is actually missing.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid<span class="op">?</span> OptionalInfoId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid<span class="op">?</span> OptionalInfoId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Info<span class="op">?</span> OptionalInfo <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <h2 id="queries">Queries</h2>
 <h3 id="includes">Includes</h3>
@@ -532,7 +521,5 @@ properties are used by EF Core to identify properties and thus will not
 produce null reference exceptions. So just use the null forgiveness
 operator “<code>!</code>” in these situations.</p>
 <p>Example</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> basicContents <span class="op">=</span> await Context<span class="op">.</span><span class="fu">Set</span><span class="op">&lt;</span>BasicContent<span class="op">&gt;()</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> basicContents <span class="op">=</span> await Context<span class="op">.</span><span class="fu">Set</span><span class="op">&lt;</span>BasicContent<span class="op">&gt;()</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">Include</span><span class="op">(</span>c <span class="op">=&gt;</span> c<span class="op">.</span><span class="fu">ValueSet</span><span class="op">!.</span><span class="fu">ValueSetVersionItems</span><span class="op">)</span></span></code></pre></div>
-</body>
-</html>

@@ -1,16 +1,20 @@
 @attribute [Route(Routes.Blog)]
 
+<PageTitle>TODO Title This Page!</PageTitle>
+
 @if (_blogMarkup is null)
 {
 	<h3>LOADING</h3>
 }
 else
 {
-	<h3>Source</h3>
+	@* <h3>Source</h3>
 	<code>
 		@_blogMarkup
-	</code>
+	</code> *@
 
-	<h3>Rendering</h3>
-	@((MarkupString)_blogMarkup)
+	@* <h3>Rendering</h3> *@
+	<article>
+		@((MarkupString)_blogMarkup)
+	</article>
 }

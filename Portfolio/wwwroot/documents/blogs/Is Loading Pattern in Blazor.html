@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Is Loading Pattern in Blazor</title>
-  <style>
+<!-- <style>
 
 html {
 color: #1a1a1a;
@@ -230,12 +223,8 @@ code span.st { color: #4070a0; }
 code span.va { color: #19177c; } 
 code span.vs { color: #4070a0; } 
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
-</style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Is Loading Pattern in Blazor</h1>
-</header>
+</style> -->
+
 <h1 id="is-loading-pattern-in-blazor">Is Loading Pattern in Blazor</h1>
 <p>It’s a common pattern to have an <code>IsLoading</code> bool property
 in the code-behind file for a Blazor component, and then check if this
@@ -246,13 +235,15 @@ pattern while also reducing nullable warnings.</p>
 <p>Here the <code>IsLoading</code> property has an attribute that
 explicitly specifies what variables will be initialized after
 <code>IsLoading</code> is <code>false</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">MemberNotNullWhen</span><span class="op">(</span><span class="kw">false</span><span class="op">,</span> <span class="fu">nameof</span><span class="op">(</span>Model<span class="op">),</span> <span class="fu">nameof</span><span class="op">(</span>SomeProperty<span class="op">))]</span></span>
+<p><code>BlazorPageExample.razor.cs</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">MemberNotNullWhen</span><span class="op">(</span><span class="kw">false</span><span class="op">,</span> <span class="fu">nameof</span><span class="op">(</span>Model<span class="op">),</span> <span class="fu">nameof</span><span class="op">(</span>SomeProperty<span class="op">))]</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> <span class="dt">bool</span> IsLoading <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> SomeEntity<span class="op">?</span> Model <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> IEnumerable<span class="op">&lt;</span><span class="dt">string</span><span class="op">&gt;?</span> SomeProperty <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <p>So here in the razor file we can put everything in an if statement
 that checks <code>IsLoading</code> and there will be no warnings.</p>
+<p><code>BlazorPageExample.razor</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>@if (IsLoading)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Loading<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
@@ -265,5 +256,3 @@ that checks <code>IsLoading</code> and there will be no warnings.</p>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>@thing<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</body>
-</html>
