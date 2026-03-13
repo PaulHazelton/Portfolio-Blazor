@@ -1,24 +1,24 @@
 [
 	{
-		"FileName": "Is-Loading-Pattern-in-Blazor",
+		"FileName": "Is Loading Pattern in Blazor",
 		"Title": "Is Loading Pattern in Blazor",
 		"PostedOn": "2025-10-01",
 		"Introduction": "It's a common pattern to have an `IsLoading` bool property in the code-behind file for a Blazor component, and then check if this is false before using certain data. While this can get the job done, and appears in many Microsoft tutorials, I think it is lacking in many ways. Nonetheless, I have some suggestions on how to improve the use of this pattern while also reducing nullable warnings."
 	},
 	{
-		"FileName": "Nullable-Reference-Types-With-Blazor",
+		"FileName": "Nullable Reference Types with Blazor",
 		"Title": "Nullable Reference Types With Blazor",
 		"PostedOn": "2025-11-01",
 		"Introduction": "My team first started using nullable reference types with Blazor, we were immediately met with hundreds of warnings. In my opinion, the main issue stems from the component lifecycle methods like `OnInitializedAsync` and `OnParametersSetAsync` being used over constructors"
 	},
 	{
-		"FileName": "Nullable-Reference-Types-With-EF-Core",
+		"FileName": "Nullable Reference Types With EF Core",
 		"Title": "Nullable Reference Types With EF Core",
 		"PostedOn": "2026-03-10",
 		"Introduction": "EF Core entities were another big source of warnings when we enabled the nullable feature in C#. Navigation properties may be required database-wise but may be null if they were not included when queried. Initialization was often most convenient with a parameterless constructor, but this now caused many warnings. After scouring Microsoft docs, reading other blogs online, and spending over 4 years waging war against null reference exceptions in C#, here's my thoughts on the best ways to use EF Core with NRT enabled."
 	},
 	{
-		"FileName": "State-Record-Pattern-In-Blazor",
+		"FileName": "State Record Pattern in Blazor",
 		"Title": "State Record Pattern In Blazor",
 		"PostedOn": "2025-12-01",
 		"Introduction": "This is like the evolution of the Is-Loading pattern, but much better. Instead of a binary state (`IsLoading` is true or false), we can have multiple states. No null warnings, no question marks or exclamation points are required."
