@@ -2,18 +2,19 @@
 	Pages:
 		Home (house icon): Who am I, brief intro
 		Projects
-		Dev Blogs
+		Blogs
 		Resume
 *@
 
 <header>
 	<nav>
-		<NavLink id="home-button" href="/" Match="NavLinkMatch.All">
-			@* <i class="bi bi-house-fill"></i> *@
-		</NavLink>
+		@* House *@
+		<NavLink id="home-button" href="@Routes.Home" Match="NavLinkMatch.All"></NavLink>
+
+		@* Links to the right *@
 		<ul id="nav-list">
-			<li><NavLink href="/projects">Projects</NavLink></li>
-			<li><NavLink href="/dev-blogs">Dev Blogs</NavLink></li>
+			<li><NavLink href="@Routes.ProjectList">Projects</NavLink></li>
+			<li><NavLink href="@Routes.BlogList">Blogs</NavLink></li>
 		</ul>
 	</nav>
 </header>

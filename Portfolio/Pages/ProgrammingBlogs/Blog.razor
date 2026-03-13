@@ -1,0 +1,16 @@
+@attribute [Route(Routes.Blog)]
+
+<PageTitle>Paul | Blogs</PageTitle>
+
+<div class="reading-pane">
+	@if (_blogMarkup is null)
+	{
+		<h3>LOADING</h3>
+	}
+	else
+	{
+		<article class="blog-article">
+			@((MarkupString)_blogMarkup)
+		</article>
+	}
+</div>
