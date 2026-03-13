@@ -8,10 +8,13 @@ public partial class Blog
 	[Parameter]
 	public required string FileName { get; set; }
 
-	private string? _markdown;
+	// private string? _markdown;
+	private string? _blogMarkup;
 
 	protected override async Task OnInitializedAsync()
 	{
-		_markdown = await HttpClient.GetStringAsync($"documents/blogs/{FileName}.md");
+		var markdown = await HttpClient.GetStringAsync($"documents/blogs/{FileName}.md");
+
+		// _blogMarkup = Markdown.ToHtml(markdown);
 	}
 }
