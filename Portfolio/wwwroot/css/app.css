@@ -17,9 +17,12 @@
 	--black: #000;
 	--white: #fff;
 	--offWhite: #ddd;
-	--gray0: #222;
-	--gray1: #282828;
-	--gray2: #777;
+
+	--gray0: #111;
+	--gray1: #222;
+	--gray2: #282828;
+	--gray3: #555;
+	--gray4: #777;
 
 	/* Animation timings */
 	--time-1: 100ms;
@@ -79,6 +82,23 @@ main {
 	justify-content: space-between;
 }
 
+h1 {
+	font-size: 3rem;
+	font-family: "Comfortaa", sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: "Comfortaa", sans-serif;
+}
+
+p {
+	font-family: "Segoe UI", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
 /* #endregion Foundation */
 
 /* #region Blogs */
@@ -96,10 +116,42 @@ main {
 	padding-bottom: 5rem;
 }
 
-article {
+.blog-preview-list-container {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.blog-preview-item {
+	text-decoration: none;
+	color: inherit;
+
+	display: block;
+	padding: 1.3rem;
+
+	/* border: 1.6px solid var(--gray2); */
+
+	border-width: 1.6px;
+	border-style: solid;
+	border-color: var(--gray2);
+	border-radius: 2rem;
+
+	background-color: var(--gray0);
+
+	transition: border-color var(--time-2) ease, background-color var(--time-2) ease;
+}
+
+.blog-preview-item:hover {
+	border-color: var(--accent);
+	background-color: color-mix(in oklab, var(--accent), black 80%);
+}
+
+
+/* article {
 	max-width: 120ch;
 	margin: 0 auto;
-}
+} */
 
 /* #endregion */
 
@@ -138,9 +190,9 @@ article {
 	border-style: solid;
 	border-width: 1px;
 
-	border-color: var(--gray2);
+	border-color: var(--gray4);
 	color: var(--foregroundColor);
-	background-color: var(--gray1);
+	background-color: var(--gray2);
 }
 
 .large-box {

@@ -3,23 +3,27 @@
 
 <PageTitle>Paul | Blogs</PageTitle>
 
-<p>
-	I'm a very opinionated programmer with a passion for type safety.
-	I spend most of my day in C#, and I was super excited to learn about the
-	<ExternalLink Href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types">
-		nullable reference types
-	</ExternalLink>
-	feature. It was not a smooth transition for me or my team to start using it with Blazor and EF Core however, so I was inspired to start writing down some code style guidelines for it's use. And now it has transitioned to this blog here.
-</p>
+<div class="reading-pane">
+	<h1>My Programming Blogs</h1>
 
-@if (BlogPreviews is null)
-{
-	<h1>LOADING</h1>
-}
-else
-{
-	@foreach (var blogData in BlogPreviews)
-	{
-		<BlogPreviewItem BlogPreview=blogData />
-	}
-}
+	<p>
+		I'm a very opinionated programmer with a passion for type safety.
+		I spend most of my day in C#, and I was super excited to learn about the
+		<ExternalLink Href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types">nullable reference types</ExternalLink>
+		feature. It was not a smooth transition for me or my team to start using it with Blazor and EF Core however, so I was inspired to start writing down some code style guidelines for it's use. And now it has transitioned to this blog here.
+	</p>
+
+	<div class="blog-preview-list-container">
+		@if (BlogPreviews is null)
+		{
+			<h1>LOADING</h1>
+		}
+		else
+		{
+			@foreach (var blogData in BlogPreviews)
+			{
+				<BlogPreviewItem BlogPreview=blogData />
+			}
+		}
+	</div>
+</div>
