@@ -193,7 +193,10 @@ a {
 div.sourceCode {
 	background-color: var(--gray0);
 	padding: 1rem;
-	overflow-x: scroll;
+	overflow-x: auto;
+
+	/* Note: Might need a variable for this when we do dark-mode-light-mode toggling. */
+	color-scheme: dark;
 }
 
 code span.al {
