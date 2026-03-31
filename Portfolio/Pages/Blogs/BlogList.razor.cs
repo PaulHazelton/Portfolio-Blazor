@@ -1,9 +1,9 @@
 using System.Net.Http.Json;
 using Portfolio.Models;
 
-namespace Portfolio.Pages.ProgrammingBlogs;
+namespace Portfolio.Pages.Blogs;
 
-public partial class ProgrammingBlogs
+public partial class BlogList
 {
 	[Inject]
 	public required HttpClient HttpClient { get; init; }
