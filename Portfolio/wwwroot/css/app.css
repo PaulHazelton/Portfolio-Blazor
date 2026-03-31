@@ -392,6 +392,36 @@ code span.wa {
 	background-color: color-mix(in oklab, var(--accent), black 80%);
 }
 
+@media (min-width: 800px) {
+	.project-preview-item article section {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.project-preview-item article section p {
+		width: 50%;
+	}
+
+	.project-preview-item article section img {
+		width: 50%;
+	}
+}
+
+@media (max-width: 800px) {
+	.project-preview-item article section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-preview-item article section p {
+		width: 100%;
+	}
+
+	.project-preview-item article section img {
+		width: 100%;
+	}
+}
+
 /* #endregion */
 
 /* #region Project Box */
