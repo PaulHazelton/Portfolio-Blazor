@@ -75,7 +75,7 @@ main {
 	height: 100%;
 	min-height: 100vh;
 
-	overflow: scroll;
+	/* overflow: scroll; */
 	
 	display: flex;
 	flex-direction: column;
@@ -352,6 +352,41 @@ code span.wa {
 .center-pane img {
 	margin-top: 2rem;
 	width: 40%;
+}
+
+/* #endregion */
+
+/* #region Projects */
+
+.project-preview-list-container {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.project-preview-item {
+	text-decoration: none;
+	color: inherit;
+
+	display: block;
+	padding: 1.3rem;
+
+	/* border: 1.6px solid var(--gray2); */
+
+	border-width: 1.6px;
+	border-style: solid;
+	border-color: var(--gray2);
+	border-radius: 2rem;
+
+	background-color: var(--gray0);
+
+	transition: border-color var(--time-2) ease, background-color var(--time-2) ease;
+}
+
+.project-preview-item:hover {
+	border-color: var(--accent);
+	background-color: color-mix(in oklab, var(--accent), black 80%);
 }
 
 /* #endregion */
