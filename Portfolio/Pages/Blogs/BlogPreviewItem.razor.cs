@@ -1,6 +1,6 @@
 using Portfolio.Models;
 
-namespace Portfolio.Pages.ProgrammingBlogs;
+namespace Portfolio.Pages.Blogs;
 
 public partial class BlogPreviewItem
 {
