@@ -1,3 +1,4 @@
+@using Portfolio.SharedComponents
 @attribute [Route(Routes.ProjectList)]
 
 <PageTitle>Paul | Projects</PageTitle>
@@ -8,7 +9,25 @@
 	<div class="project-preview-list-container">
 		<ProjectPreviewItem ProjectPreview='new(Routes.Projects.ZoomNotify, "Zoom Notify")'>
 			<Description>
-				Zoom Notify is a simple chrome extension that let's you receive notifications from chat messages while in a Zoom meeting.
+				<div style="display: flex; flex-direction: column; justify-content: space-between">
+					<p>
+						Zoom Notify is a simple chrome extension that let's you receive notifications from chat messages while in a Zoom meeting.
+						I made this Chrome extension with my friend 
+						<ExternalLink Href="https://fabio-setti.netlify.app/">Fabio Setti</ExternalLink>.
+					</p>
+
+					<div style="display: flex; flex-direction: column; gap: 1rem; align-items: center">
+						<a class="btn" target="_blank" href="https://chromewebstore.google.com/detail/zoom-notify/fkbcmepniooahcmngbidlolhadidleik">
+							View it in the Chrome Web Store
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+
+						<a class="btn" target="_blank" href="https://github.com/quinix45/Zoom_Notify">
+							Check out the source code on GitHub
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+					</div>
+				</div>
 			</Description>
 			<Image>
 				<img src='images/zoom-notify.svg' alt='Blue ellipse with white Z and N' />
@@ -16,9 +35,11 @@
 		</ProjectPreviewItem>
 		<ProjectPreviewItem ProjectPreview='new(Routes.Projects.Recoil, "Recoil")'>
 			<Description>
-				Recoil is a 2D platformer where your character can only move by using the recoil of their gun. Recoil is
-				made in C# using the MonoGame framework. I am the sole developer, I've done all the programming, game
-				design, art work, sounds effects, and writing.
+				<p>
+					Recoil is a 2D platformer where your character can only move by using the recoil of their gun. Recoil is
+					made in C# using the MonoGame framework. I am the sole developer, I've done all the programming, game
+					design, art work, sounds effects, and writing.
+				</p>
 			</Description>
 			<Image>
 				<img src='images/recoil-square.png' alt='Pixel art tank with 4 barrels' />

@@ -398,7 +398,7 @@ code span.wa {
 		flex-direction: row;
 	}
 
-	.project-preview-item article section p {
+	.project-preview-item article section>div {
 		width: 50%;
 	}
 
@@ -413,7 +413,7 @@ code span.wa {
 		flex-direction: column;
 	}
 
-	.project-preview-item article section p {
+	.project-preview-item article section>div {
 		width: 100%;
 	}
 
@@ -516,6 +516,8 @@ code span.wa {
 /* #region Nice button */
 
 .btn {
+	display: inline-block;
+
 	border: 1px solid var(--accent);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
