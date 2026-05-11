@@ -383,13 +383,6 @@ code span.wa {
 	border-radius: 2rem;
 
 	background-color: var(--gray0);
-
-	transition: border-color var(--time-2) ease, background-color var(--time-2) ease;
-}
-
-.project-preview-item:hover {
-	border-color: var(--accent);
-	background-color: color-mix(in oklab, var(--accent), black 80%);
 }
 
 @media (min-width: 800px) {
@@ -398,7 +391,7 @@ code span.wa {
 		flex-direction: row;
 	}
 
-	.project-preview-item article section p {
+	.project-preview-item article section>div {
 		width: 50%;
 	}
 
@@ -413,7 +406,7 @@ code span.wa {
 		flex-direction: column;
 	}
 
-	.project-preview-item article section p {
+	.project-preview-item article section>div {
 		width: 100%;
 	}
 
@@ -516,6 +509,8 @@ code span.wa {
 /* #region Nice button */
 
 .btn {
+	display: inline-block;
+
 	border: 1px solid var(--accent);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
