@@ -383,13 +383,6 @@ code span.wa {
 	border-radius: 2rem;
 
 	background-color: var(--gray0);
-
-	transition: border-color var(--time-2) ease, background-color var(--time-2) ease;
-}
-
-.project-preview-item:hover {
-	border-color: var(--accent);
-	background-color: color-mix(in oklab, var(--accent), black 80%);
 }
 
 @media (min-width: 800px) {

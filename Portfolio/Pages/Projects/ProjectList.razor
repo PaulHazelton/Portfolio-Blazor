@@ -7,7 +7,7 @@
 	<h1>My Projects</h1>
 
 	<div class="project-preview-list-container">
-		<ProjectPreviewItem ProjectPreview='new(Routes.Projects.ZoomNotify, "Zoom Notify")'>
+		<ProjectPreviewItem ProjectTitle="Zoom Notify">
 			<Description>
 				<div style="display: flex; flex-direction: column; justify-content: space-between">
 					<p>
@@ -33,13 +33,22 @@
 				<img src='images/zoom-notify.svg' alt='Blue ellipse with white Z and N' />
 			</Image>
 		</ProjectPreviewItem>
-		<ProjectPreviewItem ProjectPreview='new(Routes.Projects.Recoil, "Recoil")'>
+		<ProjectPreviewItem ProjectTitle="Recoil">
 			<Description>
-				<p>
-					Recoil is a 2D platformer where your character can only move by using the recoil of their gun. Recoil is
-					made in C# using the MonoGame framework. I am the sole developer, I've done all the programming, game
-					design, art work, sounds effects, and writing.
-				</p>
+				<div style="display: flex; flex-direction: column; justify-content: space-between">
+					<p>
+						Recoil is a 2D platformer where your character can only move by using the recoil of their gun. Recoil is
+						made in C# using the MonoGame framework. I am the sole developer, I've done all the programming, game
+						design, art work, sounds effects, and writing.
+					</p>
+
+					<div style="display: flex; flex-direction: column; gap: 1rem; align-items: center">
+						<a class="btn" href="@Routes.Projects.Recoil">
+							Read More
+							<i class="fa-solid fa-angles-right"></i>
+						</a>
+					</div>
+				</div>
 			</Description>
 			<Image>
 				<img src='images/recoil-square.png' alt='Pixel art tank with 4 barrels' />
