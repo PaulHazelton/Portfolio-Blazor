@@ -1,0 +1,258 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+/* /Layout/NavMenu.razor.rz.scp.css */
+header[b-jey3l8hr1c] {
+	font-family: "Comfortaa", sans-serif;
+	font-size: calc(var(--header-fs));
+
+	position: fixed;
+	top: 0;
+
+	width: 100%;
+
+	height: 4em;
+
+	background-color: var(--gray1);
+	z-index: 10;
+}
+
+/* Nav items */
+nav[b-jey3l8hr1c] {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	padding: 0 1em;
+}
+
+/* Home Button */
+[b-jey3l8hr1c] #home-button {
+	font-size: 1.5em;
+	height: 2em;
+	width: 2em;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-decoration: none;
+	color: var(--foregroundColor);
+
+	cursor: pointer;
+}
+
+[b-jey3l8hr1c] #home-button::after {
+	font-family: "bootstrap-icons";
+	content: "\f425";
+	font-size: 2rem;
+}
+
+[b-jey3l8hr1c] #home-button.active::after {
+	content: "\f424";
+}
+
+[b-jey3l8hr1c] #home-button:hover,
+[b-jey3l8hr1c] #home-button.active {
+	color: var(--accent);
+}
+
+#nav-list[b-jey3l8hr1c] {
+	list-style: none;
+	display: flex;
+}
+
+/* Old scroll helper for mobile horizontal scrolling */
+#nav-list[b-jey3l8hr1c]:after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	pointer-events: none;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--gray1) 100%);
+	width: 2em;
+	height: 100%;
+}
+
+[b-jey3l8hr1c] #nav-list a {
+	font-size: 1.5em;
+
+	position: relative;
+	margin: 0 1.3em;
+	white-space: nowrap;
+	text-decoration: none;
+
+	color: var(--foregroundColor);
+
+	transition: transform var(--time-2) ease-in;
+
+	cursor: pointer;
+}
+
+[b-jey3l8hr1c] #nav-list a:hover,
+[b-jey3l8hr1c] #nav-list a.active {
+	color: var(--accent);
+}
+
+/* Underline hidden */
+[b-jey3l8hr1c] #nav-list a::after {
+	content: '';
+	position: absolute;
+
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+
+	transform: scaleX(0);
+	transition: transform var(--time-1) ease-in;
+
+	background: var(--accent);
+}
+
+/* Underline shown */
+[b-jey3l8hr1c] #nav-list a:hover::after {
+	transform: scaleX(1);
+	transition: transform var(--time-1) ease-in;
+}
+/* /Pages/Home.razor.rz.scp.css */
+.home-container[b-ois3x2fd0s] {
+	max-width: 100ch;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+/* Large */
+@media (min-width: 800px) {
+	.home-container[b-ois3x2fd0s] {
+		margin-top: 2rem;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	.text[b-ois3x2fd0s] {
+		width: 60%;
+	}
+}
+
+/* Medium + Small */
+@media (max-width: 800px) {
+	.image[b-ois3x2fd0s] {
+		padding-top: 2rem;
+		align-self: center;
+	}
+}
+
+
+.home-container h1[b-ois3x2fd0s] {
+	font-size: 4rem;
+	font-family: "Comfortaa", sans-serif;
+}
+
+.home-container h2[b-ois3x2fd0s] {
+	font-family: "Comfortaa", sans-serif;
+	margin-bottom: 1rem;
+}
+
+.home-container p[b-ois3x2fd0s] {
+	font-family: "Segoe UI", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin-bottom: 2rem;
+}
+
+.home-container img[b-ois3x2fd0s] {
+	border-radius: 50%;
+}
+
+.image[b-ois3x2fd0s] {
+	width: 35%;
+}
+
+.image img[b-ois3x2fd0s] {
+	width: 100%;
+}
+/* /SharedComponents/ExternalLink.razor.rz.scp.css */
+.ext-link[b-82hv65al7p] {
+	position: relative;
+	color: var(--accent);
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.ext-link[b-82hv65al7p]::after {
+	content: '';
+	position: absolute;
+
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+
+	transform: scaleX(0);
+	transition: transform var(--time-1) ease-in;
+
+	background: var(--accent);
+}
+
+.ext-link:hover[b-82hv65al7p]::after,
+.ext-link:focus[b-82hv65al7p]::after {
+	transform: scaleX(1);
+	outline: 0;
+}
+/* /SharedComponents/LinkyFooter.razor.rz.scp.css */
+footer[b-xlt1086b6o] {
+	width: 100%;
+	text-align: center;
+	margin-top: 1rem;
+	padding: 1rem;
+}
+
+.connection-list[b-xlt1086b6o] {
+	padding-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.connection[b-xlt1086b6o] {
+	position: relative;
+	width: 4rem;
+	color: white;
+}
+
+.connection i[b-xlt1086b6o] {
+	font-size: 4rem;
+	color: white;
+}
+
+.connection-link:hover .connection-pic[b-xlt1086b6o] {
+	transform: rotateZ(360deg);
+	transition: transform var(--time-3) ease;
+}
+
+.connection-link:focus .connection-pic[b-xlt1086b6o] {
+	border: 2px solid var(--accent);
+	outline-style: none;
+	outline-width: 0px;
+	outline: none;
+	transition: 0;
+}
+
+.connection-label[b-xlt1086b6o] {
+	font-size: 1rem;
+	font-weight: normal;
+	text-align: center;
+
+	position: relative;
+	width: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+}

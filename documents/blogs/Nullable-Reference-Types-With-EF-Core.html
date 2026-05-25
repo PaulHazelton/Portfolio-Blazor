@@ -1,0 +1,525 @@
+<!-- <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style> -->
+
+<h1 id="nullable-reference-types-with-ef-core">Nullable Reference Types
+With EF Core</h1>
+<p>EF Core entities were another big source of warnings when we enabled
+the nullable feature in C#. Navigation properties may be required
+database-wise but may be null if they were not included when queried.
+Initialization was often most convenient with a parameterless
+constructor, but this now caused many warnings. After scouring Microsoft
+docs, reading other blogs online, and spending over 4 years waging war
+against null reference exceptions in C#, here’s my thoughts on the best
+ways to use EF Core with NRT enabled.</p>
+<p>Much of these notes is based around the Microsoft documentation,
+mixed in with my opinions and preferences. <a href="https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types">Here’s
+Microsoft’s documentation for this, it’s worth a read.</a></p>
+<h2 id="creating-entities">Creating Entities</h2>
+<h3 id="constructors-and-initialization">Constructors and
+Initialization</h3>
+<p>It looks like EF Core requires entities to have a constructor. Even
+if this ever changes, I prefer using constructors for the sake of
+clarity anyway. For these notes we will assume that EF requires a
+constructor to be present.</p>
+<p>I propose 3 ways to define an entity in terms of initialization.</p>
+<h4 id="method-1-database-constructor-and-program-constructor">Method 1:
+Database Constructor and Program Constructor</h4>
+<p>The entity will have 2 (or more) constructors: an internal
+constructor (optionally with parameters for each required property, with
+matching names) intended only for use by EF when loading the object from
+the database, and one or more public constructors for use by the program
+when actually creating new entities. While this method is a bit verbose,
+it is my preference.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Guid Id <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Name <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Details <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Navigation property</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> Children <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">private</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Record that will exist as extra columns on the same table</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> CreatedInformation CreatedInformation <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">private</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// EF Constructor</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Could omit the parameters and just set all properties to `default!`.</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">internal</span> <span class="fu">MyEntity</span><span class="op">(</span>Guid id<span class="op">,</span> <span class="dt">string</span> name<span class="op">,</span> <span class="dt">string</span> details<span class="op">)</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        Id <span class="op">=</span> id<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        Name <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        Details <span class="op">=</span> details<span class="op">;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="co">// EF core can&#39;t set navigation properties, so we have to assign default values</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">// EF core will set these values automatically after the constructor is called.</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        Children <span class="op">=</span> <span class="op">[];</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        CreatedInformation <span class="op">=</span> <span class="kw">default</span><span class="op">!;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">// API Post Constructor</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">MyEntity</span><span class="op">(</span><span class="dt">string</span> name<span class="op">,</span> <span class="dt">string</span> details<span class="op">,</span> List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> children<span class="op">,</span> <span class="dt">string</span> userId<span class="op">)</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        Id <span class="op">=</span> Guid<span class="op">.</span><span class="fu">NewGuid</span><span class="op">();</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        Name <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        Details <span class="op">=</span> details<span class="op">;</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        Children <span class="op">=</span> children<span class="op">;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        CreatedInformation <span class="op">=</span> <span class="kw">new</span><span class="op">(</span>userId<span class="op">);</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> record <span class="fu">CreatedInformation</span><span class="op">(</span>Guid CreatedBy<span class="op">,</span> DateTime CreatedOn<span class="op">);</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Clarity: it is very clear what properties are expected to be not
+null, and which aren’t.</td>
+<td>❌ Verbose: <a href="https://learn.microsoft.com/en-us/ef/core/modeling/constructors#binding-to-mapped-properties">EF
+Core cannot set navigation properties using a constructor</a>, so they
+have to be initialized with <code>default!</code>. And all properties
+must be initialized in the constructor.</td>
+</tr>
+<tr>
+<td>✅ Safe: if a new property is added or changed, warnings will be
+generated if we forget to initialize them.</td>
+<td>❌ Verbose: all required properties must essentially be initialized
+twice.</td>
+</tr>
+<tr>
+<td>✅ More control: it allows for clear initialization logic even in
+the database constructor.</td>
+<td>ℹ️ Internal Constructor: If the constructor is private, there’s an
+info warning about an unused private member. You can get around this by
+marking it as internal rather than, which is not ideal since it should
+only be used by EF Core. But I think making it internal is the best
+middle ground.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="method-2-suppress-warning">Method 2: Suppress Warning</h4>
+<p>This method has the least boilerplate and is probably the simplest,
+but at the cost of ugly <code>#pragma</code>code. It’s my second
+favorite method, and I think it is the most palatable option for most
+people on the team.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Guid Id <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Name <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Details <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Navigation property</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> Children <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Record that will exist as extra columns on the same table</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> CreatedInformation CreatedInformation <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// EF Constructor</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>#pragma warning disable CS8618 <span class="co">// Non-nullable field must contain a non-null value when exiting constructor. Consider adding the &#39;required&#39; modifier or declaring as nullable.</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="fu">MyEntity</span><span class="op">()</span> <span class="op">{</span> <span class="op">}</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>#pragma warning restore CS8618 <span class="co">// Non-nullable field must contain a non-null value when exiting constructor. Consider adding the &#39;required&#39; modifier or declaring as nullable.</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">// API Post Constructor</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">MyEntity</span><span class="op">(</span><span class="dt">string</span> name<span class="op">,</span> <span class="dt">string</span> details<span class="op">,</span> List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> children<span class="op">,</span> <span class="dt">string</span> userId<span class="op">)</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        Id <span class="op">=</span> Guid<span class="op">.</span><span class="fu">NewGuid</span><span class="op">();</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        Name <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        Details <span class="op">=</span> details<span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        Children <span class="op">=</span> children<span class="op">;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        CreatedInformation <span class="op">=</span> <span class="kw">new</span><span class="op">(</span>userId<span class="op">);</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Clarity: less boilerplate, and the only constructors with any
+meaning are the only ones with any content.</td>
+<td>❌ Ugly: pragma warning disable is ugly.</td>
+</tr>
+<tr>
+<td>✅ Low risk. if a new property is added or changed, warnings will be
+generated if we forget to initialize them.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="method-3-required-members-with-optional-setsrequiredmembers-attribute">Method
+3: Required Members with Optional
+<code>SetsRequiredMembers</code> Attribute</h4>
+<p>This time the EF Core constructor is parameter-less and empty, and
+all the required properties have the <code>required</code>modifier. This
+actually works just fine if you don’t intend on using a constructor and
+want to only use the object-initializer syntax. I dislike this method
+because it opens us up to a <a href="https://github.com/dotnet/csharplang/discussions/6405">pit of
+failure</a> (lmao) which kind of defeats the purpose of the null
+reference analyzer.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">Table</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>MyEntity<span class="op">))]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">PrimaryKey</span><span class="op">(</span><span class="fu">nameof</span><span class="op">(</span>Id<span class="op">))]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyEntity</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Guid Id <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> required <span class="dt">string</span> Name <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Required<span class="op">]</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> required <span class="dt">string</span> Details <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Navigation property</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> required List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> Children <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Record that will exist as extra columns on the same table</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> required CreatedInformation CreatedInformation <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// EF Constructor</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">internal</span> <span class="fu">MyEntity</span><span class="op">()</span> <span class="op">{</span> <span class="op">}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">// API Post Constructor</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// This attribute is required so consumers of MyEntity can just call the constructor without manually initializing all the required properties.</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Or omit this constructor entirely if you want to just use object-initializer syntax.</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>SetsRequiredMembers<span class="op">]</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">MyEntity</span><span class="op">(</span><span class="dt">string</span> name<span class="op">,</span> <span class="dt">string</span> details<span class="op">,</span> List<span class="op">&lt;</span>ChildEntity<span class="op">&gt;</span> children<span class="op">,</span> <span class="dt">string</span> userId<span class="op">)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        Id <span class="op">=</span> Guid<span class="op">.</span><span class="fu">NewGuid</span><span class="op">();</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        Name <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        Details <span class="op">=</span> details<span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        Children <span class="op">=</span> children<span class="op">;</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        CreatedInformation <span class="op">=</span> <span class="kw">new</span><span class="op">(</span>userId<span class="op">);</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ No boilerplate: Properties only have to be initialized in the
+“real” constructor</td>
+<td>❌❌ Unsafe: If we add or change a property, the compiler will not
+warn us if we forget to initialize it.<br><br><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/required">There’s
+a big warning on the Microsoft page about this.</a><br><br>I recommend
+commenting out the attribute while working with the entity itself to get
+the warning back temporarily.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="navigation-properties">Navigation Properties</h2>
+<p>There’s a <a href="https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types#navigating-and-including-nullable-relationships">section
+about this on the Microsoft docs</a> that discusses this in more
+detail.</p>
+<h3 id="required-navigations">Required Navigations</h3>
+<p>In my opinion, <em>required</em> navigations should always have the
+the foreign key as a <strong>non-nullable</strong> property included on
+the entity.</p>
+<p>For the reference navigation itself, unfortunately I don’t know of a
+great way that doesn’t require the programmer to just <em>remember to
+include the needed data</em> or find out at a runtime exception.</p>
+<p>Microsoft’s note on this is pretty interesting:</p>
+<blockquote>
+<p>[!quote] <a href="https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types#required-navigation-properties">Microsoft
+on Required Navigations</a> This means that required navigations from
+the dependent to the principal: - Should be non-nullable if it is
+considered a programmer error to access a navigation when it is not
+loaded. - Should be nullable if it acceptable for application code to
+check the navigation to determine whether or not the relationship is
+loaded.</p>
+</blockquote>
+<p>You mark the navigation properties as nullable so that when you go
+use the object you get a warning that the property might be null. Then
+you can go and put null forgiveness operators or
+null-coalesce-and-throws at the top of the function. By doing it this
+way, you are forced to write more boilerplate, but you’re less likely to
+forget to write the correct include statements. As an added bonus,
+prepending your functions with null-coalesce-and-throws can serve as
+added documentation.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid BlogId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Blog<span class="op">?</span> Blog <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
+<p>Alternatively, Microsoft proposes a “stricter approach” that can
+combine the previously mentioned boilerplate onto the entity itself. Now
+the null-coalesce-and-throws can be put in one place, and navigation
+properties that are required don’t have to be marked as nullable.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Address<span class="op">?</span> _shippingAddress<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Address ShippingAddress</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    set <span class="op">=&gt;</span> _shippingAddress <span class="op">=</span> value<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    get <span class="op">=&gt;</span> _shippingAddress</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>           <span class="op">??</span> <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">InvalidOperationException</span><span class="op">(</span><span class="st">&quot;Uninitialized property: &quot;</span> <span class="op">+</span> <span class="fu">nameof</span><span class="op">(</span>ShippingAddress<span class="op">));</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="optional-navigations">Optional Navigations</h3>
+<p>Optional navigations should also be paired with the an ID property,
+if they have one, this time <strong>nullable</strong>. The navigation
+object is also nullable since it is optional. The downside here is you
+have to careful, a null value could mean you forgot to include the
+property or the property is actually missing.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Guid<span class="op">?</span> OptionalInfoId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Info<span class="op">?</span> OptionalInfo <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
+<h2 id="queries">Queries</h2>
+<h3 id="includes">Includes</h3>
+<p>The expressions for includes or then-includes that target nullable
+properties are used by EF Core to identify properties and thus will not
+produce null reference exceptions. So just use the null forgiveness
+operator “<code>!</code>” in these situations.</p>
+<p>Example</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> basicContents <span class="op">=</span> await Context<span class="op">.</span><span class="fu">Set</span><span class="op">&lt;</span>BasicContent<span class="op">&gt;()</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">Include</span><span class="op">(</span>c <span class="op">=&gt;</span> c<span class="op">.</span><span class="fu">ValueSet</span><span class="op">!.</span><span class="fu">ValueSetVersionItems</span><span class="op">)</span></span></code></pre></div>
